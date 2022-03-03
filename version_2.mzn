@@ -22,11 +22,13 @@ int: forbidden3l = length(forbidden3) div 3;
 
 
 %decision variables in new perspective
+array[1..w] of var 1..w+4: gt;
 array[1..groups,1..w,0..numShifts] of var 0..1: T_new;
 array[1..groups*w] of var Sp: T;
 var 0..w-1: o; % the offset 
+var 0..groups: free;
 
-solve satisfy;
+solve maximize free;
 %to have exactly one shift selected 
 constraint
 forall(worker in N)(
@@ -44,12 +46,12 @@ forall(i in 1..groups, j in 1..w, k in 0..numShifts)(
 %demand constraints
 constraint
 forall(s in S,d in W)(
-  (sum(x in N)(T_new[x,d,s])) == demand[s,d+o]
+  (sum(x in N)(T_new[x,d,s])) == demand[s,max(1,(d+o) mod (w))]
 );  
 
 constraint
 forall(d in W)(
-  (sum(x in N)(T_new[x,d,0])) == groups - (sum(s in S)(demand[s,d+o]))
+  (sum(x in N)(T_new[x,d,0])) == groups - (sum(s in S)(demand[s,max(1,(d+o) mod (w))]))
 );
 
 %symmetry breaking constraints
@@ -194,6 +196,7 @@ forall(n in 1..groups, d in 1..w, s in S)(
 );
 
 %length 3 
+
 constraint
 forall(n in 1..groups, d in 1..w, s in S)(
   if(T_new[n,d,s] == 1 /\ forbidden3l > 0) then( 
@@ -204,13 +207,46 @@ forall(n in 1..groups, d in 1..w, s in S)(
   else true endif
 );
 
+%offset breaking
+
+constraint
+forall(d in 2..w)(
+  if(sum(s in S)(demand[s,d]) > sum(s in S)(demand[s,d-1])) then(
+    gt[d] = d
+  )
+  else (
+    gt[d] = w+4
+  )
+  endif
+);
+
+constraint
+  if(sum(s in S)(demand[s,1]) > sum(s in S)(demand[s,w])) then(
+    gt[1] = 1
+  )
+  else(
+    gt[1] = w+4
+  )
+  endif;
+
+constraint
+if(min(gt) == w + 4) then o == 0 else o = min(gt)-1 endif;
+
+constraint
+free = sum(x in 1..groups)((T_new[x,w-1,0] = 1) /\ (T_new[x,w,0]=1))
+;
 
   
   
     
 
 %output ["T-new","\(T_new)\n"];
-output ["T","\(T)"];
+output ["T","\(T)\n"];
+output ["free weekends \(free)\n"];
+%output ["gt","\(gt)\n"];
+
+%output ["demand","\(demand)\n"];
+%output ["offset","\(o)\n"];
  
 
 
