@@ -200,8 +200,10 @@ forall(n in 1..groups, d in 1..w, s in S)(
 constraint
 forall(n in 1..groups, d in 1..w, s in S)(
   if(T_new[n,d,s] == 1 /\ forbidden3l > 0) then( 
-    forall(x in 1..forbidden3l, y in 1..3)(
-      T_new[((((n-1)*w + d-1 + y-1) div w) mod groups) + 1, (((n-1)*w + d-1 + y-1) mod w) + 1, forbidden3[x,y]] != 1  
+    forall(x in 1..forbidden3l)(
+      (T_new[((((n-1)*w + d-1 + 1-1) div w) mod groups) + 1, (((n-1)*w + d-1 + 1-1) mod w) + 1, forbidden3[x,1]] != 1) \/
+      (T_new[((((n-1)*w + d-1 + 2-1) div w) mod groups) + 1, (((n-1)*w + d-1 + 2-1) mod w) + 1, forbidden3[x,2]] != 1) \/
+      (T_new[((((n-1)*w + d-1 + 3-1) div w) mod groups) + 1, (((n-1)*w + d-1 + 3-1) mod w) + 1, forbidden3[x,3]] != 1)
     )
   )
   else true endif
