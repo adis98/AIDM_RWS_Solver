@@ -90,12 +90,22 @@ constraint
 constraint forall(i in 1..pr) (forall(s in S)
    (T[i] != s \/ count_eq(forbidden[s], T[max(1,((i+1) mod (pr+1)))], 0)));
 % Eq (10)
-constraint forall(i in 1..pr) (forall(ii in 1..3)
-   (if forbidden3l>0 then
-   sum(jj in 1..forbidden3l) (forbidden3[jj ,ii] - T[max(1,((i+jj-1) mod (pr+1)))] != 0) > 0
-   else true endif));
+constraint
+forall(i in 1..pr)(
+ if(forbidden3l > 0) then(
+     forall(j in 1..forbidden3l)(
+       (forbidden3[j,1] != T[i]) \/ (forbidden3[j,2] != T[max(1,(i+1)mod(pr+1))]) \/ (forbidden3[j,3] != T[max(1,(i+2)mod(pr+1))])
+     )
+ )
+ else true endif
+);
+        
+%constraint forall(i in 1..pr) (forall(ii in 1..3)
+%   (if forbidden3l>0 then
+%   sum(jj in 1..forbidden3l) (forbidden3[jj ,ii] - T[max(1,((i+jj-1) mod (pr+1)))] != 0) > 0
+%   else true endif));
    
-array[1..(w-1)] of var bool: bools;
+%array[1..(w-1)] of var bool: bools;
 
 constraint
 free = sum(i in 1..groups)(T[max(1,(w*i-1))]=0 /\ T[max(1,(w*i))]=0);

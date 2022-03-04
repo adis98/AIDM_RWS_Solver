@@ -55,8 +55,8 @@ forall(d in W)(
 );
 
 %symmetry breaking constraints
-constraint T_new[1,1,0] != 1;
-constraint T_new[groups,w,0] == 1;
+constraint symmetry_breaking_constraint(T_new[1,1,0] != 1);
+constraint symmetry_breaking_constraint(T_new[groups,w,0]== 1);
 
 %shift constraints
 %minShift maxShift
@@ -229,8 +229,8 @@ constraint
   )
   endif;
 
-constraint
-if(min(gt) == w + 4) then o == 0 else o = min(gt)-1 endif;
+
+constraint symmetry_breaking_constraint(if(min(gt) == w + 4) then o == 0 else o = min(gt)-1 endif);
 
 constraint
 free = sum(x in 1..groups)((T_new[x,w-1,0] = 1) /\ (T_new[x,w,0]=1))
