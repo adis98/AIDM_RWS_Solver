@@ -46,12 +46,12 @@ forall(i in 1..groups, j in 1..w, k in 0..numShifts)(
 %demand constraints
 constraint
 forall(s in S,d in W)(
-  (sum(x in N)(T_new[x,d,s])) == demand[s,max(1,(d+o) mod (w))]
+  (sum(x in N)(T_new[x,d,s])) == demand[s,max(1,(d+o) mod (w+1))]
 );  
 
 constraint
 forall(d in W)(
-  (sum(x in N)(T_new[x,d,0])) == groups - (sum(s in S)(demand[s,max(1,(d+o) mod (w))]))
+  (sum(x in N)(T_new[x,d,0])) == groups - (sum(s in S)(demand[s,max(1,(d+o) mod (w+1))]))
 );
 
 %symmetry breaking constraints
