@@ -112,6 +112,63 @@ forall(i in 1..pr)(
 constraint forall(d in 2..w) (bools[d-1] = (sum(s in S)(demand[s,d]) <= sum(s in S)(demand[s,d-1])));
 constraint symmetry_breaking_constraint(if (sum(bools) == (w-1)) then (o = 0) else (o = arg_min(bools)) endif);
 
+%%  Problem extensions
+% Infeasible weekly fluctuation
+% Eq (13)
+constraint 
+  forall(s in S) (
+    forall(i in W) (
+      forall(j in maxShift[s]+1..2*minShift[s]-1) (
+        forall(k in j-minShift[s]..minShift[s]-1) (
+         demand[s,(i+k) mod (w+1) + (i+k) div(w+1)] >= demand[s,i] - demand[s,(w+i-1) mod (w+1)] + demand[s, (i+j-1) mod (w+1) + (i+j-1) div(w+1)] - demand[s, (i+j) mod (w+1) + (i+j) div(w+1)]
+        )
+      )
+    )
+  );
+
+% Bounding the number of blocks
+int : demand_sum = sum(i in W)(sum(j in S)(demand[i,j]));
+var 0..pr: low_w; %  helper variable for bounding blocks constraints
+var 0..pr: up_w; %  helper variable for bounding blocks constraints
+var 0..pr: low_o; %  helper variable for bounding blocks constraints
+var 0..pr: up_o; %  helper variable for bounding blocks constraints
+var 0..pr: low; %  helper variable for bounding blocks constraints
+var 0..pr: up; %  helper variable for bounding blocks constraints
+
+% Eq (14-19)
+constraint low_w = demand_sum div maxOn + 1;
+constraint up_w = demand_sum div minOn;
+constraint low_o = (pr - demand_sum) div maxOff + 1;
+constraint up_o = (pr - demand_sum) div minOff;
+constraint low = max(low_o, low_w);
+constraint up = min(up_o, up_w);
+
+array[1..pr] of var 1..pr: c_w; % helper variables for bounding blocks constraints
+array[1..pr] of var 1..pr: c_o; % helper variables for bounding blocks constraints
+array[1..pr] of var 1..pr: c_b; % helper variables for bounding blocks constraints
+
+% Eq (21-25)
+constraint c_w[1] = 0;
+constraint forall(i in 2..pr) (c_w[i] = c_w[i-1] + (T[i] == 0));
+constraint c_o[1] = 0;
+constraint forall(i in 2..pr) (c_o[i] = c_o[i-1] + (T[i] != 0));
+constraint c_b[1] = 0;
+constraint forall(i in 2..pr) (c_b[i] = c_b[i-1] + (T[i-1] == 0 /\ T[i] != 0));
+
+constraint forall(i in 1..pr) (
+  if c_b[i] < c_b[(i+1) mod (pr+1) + (i+1) div (pr+1)] then 
+    (low - c_b[i])*minOff <= pr - demand_sum - c_o[i] /\ pr - demand_sum - c_o[i] <= (up - c_b[i])*maxOff
+  else true
+  endif);
+
+constraint forall(i in 1..pr) (
+  if c_b[i] < c_b[(i+1) mod (pr+1) + (i+1) div (pr+1)] then 
+    (low - c_b[i])*minOn <= demand_sum - c_w[i] /\ demand_sum - c_w[i] <= (up - c_b[i])*maxOn
+  else true
+  endif);
+  
+
+
 % Outputs
 output ["result = \(T) \n"];
 output ["o = \(o) \n"];
