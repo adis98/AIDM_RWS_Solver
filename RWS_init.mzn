@@ -29,17 +29,27 @@ array[1..(w-1)] of var bool: bools; % helper variables for the offset calculatio
 % Define objective function
 solve satisfy;
 
+% Define important functions
+% function var int: calc_mod_var(var int: inp, int: divisor) = inp mod divisor + inp div divisor;
+% function int: calc_mod(int: inp, int: divisor) = inp mod divisor + inp div divisor;
+% function int: calc_mod(int: inp, int: divisor) = if (inp mod divisor) > 0 then (inp mod divisor) else 1 endif; %+ inp div divisor;
+function int: calc_mod(int: inp, int: divisor) = (inp-1) mod divisor + 1;
+
 % Define constraints
 % Demand constraints
 % Eq (1)
 constraint
 forall(d in W, s in S)(
-  sum(i in 0..groups-1)(T[d + i*w] = s) == demand[s,(d+o) mod (w+1) + (d+o) div (w+1)]
+%   sum(i in 0..groups-1)(T[d+i*w] = s) == demand[s,calc_mod_var(d+o, w+1)]
+%   sum(i in 0..groups-1)(T[d+i*w] == s) = demand[s,(d+o) mod (w+1) + (d+o) div (w+1)]
+  sum(i in 0..groups-1)(T[d+i*w] == s) = demand[s,(d+o-1) mod (w) + 1]
 );
 
 constraint 
 forall(d in W) (
-  sum(i in 0..groups-1)(T[d+w*i] == 0) = groups - sum(s in S) (demand[s,(d+o) mod (w+1) + (d+o) div (w+1)])
+%   sum(i in 0..groups-1)(T[d+w*i] == 0) = groups - sum(s in S) (demand[s,calc_mod_var(d+o, w+1)])
+%   sum(i in 0..groups-1)(T[d+w*i] == 0) = groups - sum(s in S) (demand[s,(d+o) mod (w+1) + (d+o) div (w+1)])
+  sum(i in 0..groups-1)(T[d+w*i] == 0) = groups - sum(s in S) (demand[s,(d+o-1) mod (w) + 1])
 );
 
 % Symmetry breaking constraints
@@ -47,61 +57,93 @@ forall(d in W) (
 constraint symmetry_breaking_constraint(T[1] != 0);
 % Eq (4)
 constraint symmetry_breaking_constraint(T[pr] == 0);
-constraint all_equal(T[pr-minOff..pr]);
+% constraint symmetry_breaking_constraint(all_equal(T[pr-minOff..pr]));
 
 % Lengths of shift blocks constraints
 % Eq (5) for Shifts
-constraint forall(i in 2..pr) (forall(s in S)
-  (if (T[i] = s /\ T[(i-1)] != s) then
-    all_equal(T[i..min(i+minShift[s]-1, pr)]) else true endif));
-% Eq (5) for i=1
-constraint (forall(s in S)
-  (if T[1] = s then 
-    all_equal(T[1..minShift[s]]) else true endif));
-% Eq (5) for Days off
-constraint forall(i in 2..(pr-minOff)) 
-  (if (T[i] = 0 /\ T[(i-1)] != 0) then
-    all_equal(T[i..i+minOff-1]) else true endif);
+constraint forall(i in 1..pr)
+%   (if (T[i] = 0 /\ T[calc_mod(pr+i-1,pr+1)] != 0) then
+  (if (T[i] = 0 /\ T[calc_mod(pr+i-1, pr)] != 0) then
+%     all_equal(T[i..min(i+minOff-1, pr)]) else true endif /\
+      forall(j in 1..minOff-1)(T[calc_mod(i+j,pr)] == T[i]) else true endif /\
+%       all_equal(T[i..calc_mod()min(i+minOff-1, pr)]) else true endif /\
+  forall(s in S)(
+    (if (T[i] = s /\ T[calc_mod(pr+i-1,pr)] != s) then
+      all_equal(T[i..min(i+minShift[s]-1, pr)]) else true endif)
+  )); 
+
+% constraint forall(i in 2..pr) (forall(s in S)
+%   (if (T[i] = s /\ T[(i-1)] != s) then
+%     all_equal(T[i..min(i+minShift[s]-1, pr)]) else true endif));
+% % Eq (5) for i=1
+% constraint (forall(s in S)
+%   (if T[1] = s then 
+%     all_equal(T[1..minShift[s]]) else true endif));
+% % Eq (5) for Days off
+% constraint forall(i in 2..(pr-minOff)) 
+%   (if (T[i] = 0 /\ T[(i-1)] != 0) then
+%     all_equal(T[i..i+minOff-1]) else true endif);
 
 % Eq (6) for Shifts
-constraint forall(i in 2..pr) (forall(s in S)
-  (if (T[i] = s /\ T[((i - 1) mod (pr+1))] != s) then 
-     (i + maxShift[s] > pr) \/ (sum(j in minShift[s]..maxShift[s]) (T[max(1,((i+j) mod (pr+1)))] != s)) > 0 else true endif));
-% Eq (6) for i=1
-constraint (forall(s in S)
-  (if T[1] = s then 
-     (1 + maxShift[s] > pr) \/ (sum(j in minShift[s]..maxShift[s]) (T[max(1,((1+j) mod (pr+1)))] != s)) > 0 else true endif));
-% Eq (6) for Off days
-constraint forall(i in 2..pr)
-  (if (T[i] = 0 /\ T[((i - 1) mod (pr+1))] != 0) then 
-     (i + maxOff > pr) \/ (sum(j in minOff..maxOff) (T[max(1,((i+j) mod (pr+1)))] != 0)) > 0 else true endif);  
+constraint forall(i in 1..pr)(
+  (if (T[i] = 0 /\ T[calc_mod(pr+i-1,pr)] != 0) then 
+     (i + maxOff > pr) \/ (sum(j in minOff..maxOff) (T[calc_mod(i+j,pr)] != 0)) > 0 else true endif) /\
+     forall(s in S)(
+  (if (T[i] = s /\ T[(pr+i-1-1) mod pr + 1] != s) then 
+     (i + maxShift[s] > pr) \/ (sum(j in minShift[s]..maxShift[s]) (T[calc_mod(i+j,pr)] != s)) > 0 else true endif)));    
+
+% constraint forall(i in 2..pr) (forall(s in S)
+%   (if (T[i] = s /\ T[i-1] != s) then 
+%      (i + maxShift[s] > pr) \/ (sum(j in minShift[s]..maxShift[s]) (T[calc_mod(i+j, pr+1)] != s)) > 0 else true endif));
+% % Eq (6) for i=1
+% constraint (forall(s in S)
+%   (if T[1] = s then 
+%      (1 + maxShift[s] > pr) \/ (sum(j in minShift[s]..maxShift[s]) (T[calc_mod(1+j, pr+1)] != s)) > 0 else true endif));
+% % Eq (6) for Off days
+% constraint forall(i in 2..pr)
+%   (if (T[i] = 0 /\ T[i-1] != 0) then 
+%      (i + maxOff > pr) \/ (sum(j in minOff..maxOff) (T[calc_mod(i+j, pr+1)] != 0)) > 0 else true endif);  
      
 % Eq (7) for Shifts
-constraint forall(i in 2..pr)
-  (if (T[i] != 0 /\ T[((i-1) mod (pr+1))] = 0) then 
-    forall(j in 1..minOn-1) (T[max(1,((i+j) mod (pr+1)))] != 0) else true endif);
-% Eq (7) for i=1
-constraint (if T[1] != 0 then 
-  forall(j in 1..minOn-1) (T[max(1,((1+j) mod (pr+1)))] != 0) else true endif);
+constraint forall(i in 1..pr-minOn)(
+  if (T[i] != 0 /\ T[calc_mod(pr+i-1,pr)] = 0) then 
+    count_eq(T[i+1..i+minOn-1],0,0)
+  else true
+  endif);
+
+% constraint forall(i in 2..pr)
+%   (if (T[i] != 0 /\ T[i-1] = 0) then 
+%     forall(j in 1..minOn-1) (T[calc_mod(i+j, pr+1)] != 0) else true endif);
+% % Eq (7) for i=1
+% constraint (if T[1] != 0 then 
+%   forall(j in 1..minOn-1) (T[calc_mod(1+j, pr+1)] != 0) else true endif);
 
 % Eq (8) for Shifts
-constraint forall(i in 2..pr)
-  (if (T[i] != 0 /\ T[((i - 1))] = 0) then 
-     ((sum(j in minOn..maxOn) (T[max(1,(i+j) mod (pr+1))] = 0)) > 0) else true endif);
-constraint
-((sum(j in minOn..maxOn) (T[max(1,((1+j) mod (pr+1)))] = 0)) > 0);      
+constraint forall(i in 1..pr-maxOn)(
+  if (T[i] != 0 /\ T[calc_mod(pr+i-1,pr)] = 0) then 
+    count(T[i+minOn..i+maxOn], 0) > 0
+%     sum(j in minOn..maxOn) (T[calc_mod(i+j, pr+1)] = 0) > 0
+  else true
+  endif);
+
+% constraint forall(i in 2..pr)
+%   (if (T[i] != 0 /\ T[((i - 1))] = 0) then 
+%      ((sum(j in minOn..maxOn) (T[calc_mod(i+j, pr+1)] = 0)) > 0) else true endif);
+% constraint
+% ((sum(j in minOn..maxOn) (T[calc_mod(1+j, pr+1)] = 0)) > 0);      
 
 % Forbidden shifts constraints
 % Eq (9)
 constraint forall(i in 1..pr) (forall(s in S)
-   (T[i] != s \/ count_eq(forbidden[s], T[max(1,((i+1) mod (pr+1)))], 0)));
+   (T[i] != s \/ count_eq(forbidden[s], T[calc_mod(i+1,pr)], 0)));
+%    (T[i] != s \/ not member(forbidden[s], T[calc_mod(i+1, pr+1)])));
 
 % Eq (10)
 constraint
 forall(i in 1..pr)(
  if(forbidden3l > 0) then(
      forall(j in 1..forbidden3l)(
-       (forbidden3[j,1] != T[i]) \/ (forbidden3[j,2] != T[max(1,(i+1)mod(pr+1))]) \/ (forbidden3[j,3] != T[max(1,(i+2)mod(pr+1))])
+       (forbidden3[j,1] != T[i]) \/ (forbidden3[j,2] != T[calc_mod(i+1,pr)]) \/ (forbidden3[j,3] != T[calc_mod(i+2,pr)])
      )
  )
  else true endif
@@ -112,63 +154,186 @@ forall(i in 1..pr)(
 constraint forall(d in 2..w) (bools[d-1] = (sum(s in S)(demand[s,d]) <= sum(s in S)(demand[s,d-1])));
 constraint symmetry_breaking_constraint(if (sum(bools) == (w-1)) then (o = 0) else (o = arg_min(bools)) endif);
 
-%%  Problem extensions
-% Infeasible weekly fluctuation
-% Eq (13)
-constraint 
-  forall(s in S) (
-    forall(i in W) (
-      forall(j in maxShift[s]+1..2*minShift[s]-1) (
-        forall(k in j-minShift[s]..minShift[s]-1) (
-         demand[s,(i+k) mod (w+1) + (i+k) div(w+1)] >= demand[s,i] - demand[s,(w+i-1) mod (w+1)] + demand[s, (i+j-1) mod (w+1) + (i+j-1) div(w+1)] - demand[s, (i+j) mod (w+1) + (i+j) div(w+1)]
-        )
-      )
-    )
-  );
+% % Problem extensions
+% % Infeasible weekly fluctuation
+% % Eq (13)
+% constraint 
+%   forall(s in S) (
+%     forall(i in W) (
+%       forall(j in maxShift[s]+1..2*minShift[s]-1) (
+%         forall(k in j-minShift[s]..minShift[s]-1) (
+%          demand[s,calc_mod(i+k, w+1)] >= demand[s,i] - demand[s,(w+i-1) mod (w+1)] + demand[s,calc_mod(i+j-1, w+1)] - demand[s, calc_mod(i+j, w+1)]
+%         )
+%       )
+%     )
+%   );
 
-% Bounding the number of blocks
-int : demand_sum = sum(i in W)(sum(j in S)(demand[i,j]));
-var 0..pr: low_w; %  helper variable for bounding blocks constraints
-var 0..pr: up_w; %  helper variable for bounding blocks constraints
-var 0..pr: low_o; %  helper variable for bounding blocks constraints
-var 0..pr: up_o; %  helper variable for bounding blocks constraints
-var 0..pr: low; %  helper variable for bounding blocks constraints
-var 0..pr: up; %  helper variable for bounding blocks constraints
+% % Bounding the number of blocks
+% % int : demand_sum = sum(i in W)(sum(j in S)(demand[j,i]));
+% int: demand_sum = sum(demand);
+% var 0..pr: low_w; %  helper variable for bounding blocks constraints
+% var 0..pr: up_w; %  helper variable for bounding blocks constraints
+% var 0..pr: low_o; %  helper variable for bounding blocks constraints
+% var 0..pr: up_o; %  helper variable for bounding blocks constraints
+% var 0..pr: low; %  helper variable for bounding blocks constraints
+% var 0..pr: up; %  helper variable for bounding blocks constraints
 
-% Eq (14-19)
-constraint low_w = demand_sum div maxOn + 1;
-constraint up_w = demand_sum div minOn;
-constraint low_o = (pr - demand_sum) div maxOff + 1;
-constraint up_o = (pr - demand_sum) div minOff;
-constraint low = max(low_o, low_w);
-constraint up = min(up_o, up_w);
+% % Eq (14-19)
+% constraint low_w = ceil(demand_sum/maxOn);
+% constraint up_w = floor(demand_sum/minOn);
+% constraint low_o = ceil((pr - demand_sum)/maxOff);
+% constraint up_o = floor((pr - demand_sum)/minOff);
+% constraint low = max(low_o, low_w);
+% constraint up = min(up_o, up_w);
 
-array[1..pr] of var 1..pr: c_w; % helper variables for bounding blocks constraints
-array[1..pr] of var 1..pr: c_o; % helper variables for bounding blocks constraints
-array[1..pr] of var 1..pr: c_b; % helper variables for bounding blocks constraints
+% array[1..pr] of var 0..pr: c_w; % helper variables for bounding blocks constraints
+% array[1..pr] of var 0..pr: c_o; % helper variables for bounding blocks constraints
+% array[1..pr] of var 0..pr: c_b; % helper variables for bounding blocks constraints
 
-% Eq (21-25)
-constraint c_w[1] = 0;
-constraint forall(i in 2..pr) (c_w[i] = c_w[i-1] + (T[i] == 0));
-constraint c_o[1] = 0;
-constraint forall(i in 2..pr) (c_o[i] = c_o[i-1] + (T[i] != 0));
-constraint c_b[1] = 0;
-constraint forall(i in 2..pr) (c_b[i] = c_b[i-1] + (T[i-1] == 0 /\ T[i] != 0));
+% % Eq (21-25)
+% constraint c_o[1] = 0;
+% constraint forall(i in 2..pr) (c_o[i] = c_o[i-1] + (T[i] == 0));
+% constraint c_w[1] = 0;
+% constraint forall(i in 2..pr) (c_w[i] = c_w[i-1] + (T[i] != 0));
+% constraint c_b[1] = 0;
+% constraint forall(i in 2..pr) (c_b[i] = c_b[i-1] + (T[i-1] == 0 /\ T[i] != 0));
 
-constraint forall(i in 1..pr) (
-  if c_b[i] < c_b[(i+1) mod (pr+1) + (i+1) div (pr+1)] then 
-    (low - c_b[i])*minOff <= pr - demand_sum - c_o[i] /\ pr - demand_sum - c_o[i] <= (up - c_b[i])*maxOff
-  else true
-  endif);
+% constraint forall(i in 1..pr) (
+%   if c_b[i] < c_b[calc_mod(i+1, pr+1)] then 
+%     (low - c_b[i])*minOff <= pr - demand_sum - c_o[i] /\ pr - demand_sum - c_o[i] <= (up - c_b[i])*maxOff
+%   else true
+%   endif);
 
-constraint forall(i in 1..pr) (
-  if c_b[i] < c_b[(i+1) mod (pr+1) + (i+1) div (pr+1)] then 
-    (low - c_b[i])*minOn <= demand_sum - c_w[i] /\ demand_sum - c_w[i] <= (up - c_b[i])*maxOn
-  else true
-  endif);
+% constraint forall(i in 1..pr) (
+%   if c_b[i] < c_b[calc_mod(i+1, pr+1)] then 
+%     (low - c_b[i])*minOn <= demand_sum - c_w[i] /\ demand_sum - c_w[i] <= (up - c_b[i])*maxOn
+%   else true
+%   endif);
   
+% % Weekly rest times
+% int: g = 1440;
+% array[1..numShifts+1] of int: start = [g, 6*60, 14*60, 22*60];
+% array[1..numShifts+1] of int: end = [0, 14*60, 22*60, 30*60];
+% int: wr = 36*60;
+% int: wr_red = 24*60;
+% int: e = 1;
+% int: s_p = 4;
 
+% % Eq 26 (Rest time)
+% array[1..pr] of var 0..pr*g: rest;
 
+% constraint forall(i in 1..pr)(
+%   if T[calc_mod(pr+i-1, pr+1)] == 0 then 
+%     rest[i] = rest[calc_mod(pr+i-1, pr+1)] + start[T[i]+1]
+%   else 
+%     rest[i] = g - end[T[calc_mod(pr+i-1, pr+1)]+1] + start[T[i]+1]
+%   endif);
+  
+% % Eq (27)-(32)
+% array[1..6,1..pr] of var bool: D;
+
+% constraint forall(i in 1..pr)(
+%   D[1,i] = (rest[i] >= wr) /\
+%   D[2,i] = (T[i] != 0) /\
+%   D[3,i] = (T[calc_mod(pr+i-1, pr+1)] != 0) /\ 
+%   D[4,i] = (end[T[calc_mod(pr+i-2, pr+1)]+1] <= g) /\
+%   D[5,i] = ((rest[T[i]]) < 2*(g*((i + o - 1) mod w) + start[T[i]+1])) /\
+%   D[6,i] = (rest[T[i]] >= wr_red));
+
+% % % Eq (33)
+% array[1..groups] of var 0..w: P;
+
+% function var int: x_help(int: i, int: j, int: w, var int: o, int: pr) = (pr+(i-1)*w+j-o) mod (pr+1) + (pr+(i-1)*w+j-o) div (pr+1);
+
+% array[1..groups,W] of var bool: P_help;
+
+% constraint forall(i in 1..groups)(
+%   forall(j in 1..w) (P_help[i,j] = 
+%   (D[1,x_help(i,j,w,o,pr)] /\ 
+%   D[2,x_help(i,j,w,o,pr)] /\ 
+%   D[3,x_help(i,j,w,o,pr)] /\ 
+%   D[4,x_help(i,j,w,o,pr)] /\
+%   D[5,x_help(i,j,w,o,pr)])));
+     
+                  
+% constraint forall(i in 1..groups)(
+%       (P[i] = arg_max(P_help[i,W])));         
+% constraint forall(i in 1..groups)(
+%   if (sum(P_help[i,W]) != 0) then 
+%     maximum_arg(P_help[i,W], P[i]) 
+% %     (P[i] = arg_max(P_help[i,W])) 
+%   else
+%     (P[i] = 0)
+%   endif);
+
+% % Eq (34)
+% constraint forall(i in 1..groups)(
+%   sum(j in 0..(s_p-1))(P[calc_mod(i+j, groups+1)]) <= e);
+  
+% % Eq (35)
+% array[1..groups] of var 0..w: P_red;
+
+% array[1..groups,W] of var bool: Pred_help;
+  
+% constraint forall(i in 1..groups)(
+%   forall(j in 1..w) (P_help[i,j] = 
+%   D[2,x_help(i,j,w,o,pr)] /\ 
+%   D[6,x_help(i,j,w,o,pr)] /\ 
+%   D[5,x_help(i,j,w,o,pr)]));
+
+% constraint forall(i in 1..groups)(
+%   if P[i] != 0 then 
+%     P_red[i] = P[i]
+%   else
+%     if (sum(P_help[i,W]) != 0) then 
+%       P_red[i] = arg_max(Pred_help[i,W]) 
+%     else
+%       P_red[i] = 0
+%     endif
+%   endif);
+  
+% % Eq (36)
+% constraint forall(i in 1..groups)(
+%   P_red[i] != 0);
+  
+% % Eq (37)
+% constraint forall(i in 1..groups)(
+%   forall(j in 0..(s_p-1))(
+%     rest[calc_mod((i+j-1)*w + P_red[calc_mod(i+j, groups+1)] - o, pr+1)] >= wr*s_p));
+    
+% % Eq (38)
+% var 0..groups: f;
+
+% constraint f = sum(i in 1..groups)(T[calc_mod(w*i-o-1,pr+1)] == 0 /\ T[calc_mod(w*i-o,pr+1)] == 0);
+
+% % Eq (39), (40)
+% array[1..groups] of var 0..w: dist;
+% array[1..groups] of var bool: free;
+% array[1..groups,1..groups] of var bool: free_help;
+% var int: dm;
+
+% constraint forall(i in 1..groups)(
+%   free[i] = (T[calc_mod(w*i-o-1,pr+1)] == 0 /\ T[calc_mod(w*i-o,pr+1)] == 0));
+
+% constraint forall(i in 1..groups)(
+%   forall(j in 1..groups)(
+%     free_help[i,j] = (free[i] /\ free[calc_mod(i+j,groups+1)])));
+    
+% constraint forall(i in 1..groups)(
+%   if free[i] == 0 then 
+%     dist[i] = 0
+%   else
+%     dist[i] = calc_mod(i+arg_min(bool2int(free_help[i,1..groups])),groups+1)
+%   endif);
+  
+% constraint 
+%   if max(dist) == 0 then
+%     dm = groups+1
+%   else
+%     dm = max(dist)
+%   endif;
+  
+  
 % Outputs
 output ["result = \(T) \n"];
 output ["o = \(o) \n"];
