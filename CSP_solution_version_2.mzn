@@ -15,6 +15,7 @@ int: minOff;
 int: maxOff;
 int: minOn;
 int: maxOn;
+int: pr = groups*w;
 array[S] of set of int: forbidden;
 array[int,int] of int: forbidden3;
 int: forbidden3l = length(forbidden3) div 3;
@@ -24,35 +25,33 @@ int: forbidden3l = length(forbidden3) div 3;
 %decision variables in new perspective
 array[1..w] of var 1..w+4: gt;
 array[1..groups,1..w,0..numShifts] of var 0..1: T_new;
-array[1..groups*w] of var Sp: T;
-var 0..w-1: o; % the offset 
+array[1..groups*w] of var Sp: T; 
 var 0..groups: free;
 
 solve maximize free;
 %to have exactly one shift selected 
 constraint
-forall(worker in N)(
-  forall(day in W)(
-    (sum(x in 0..3)(T_new[worker,day,x])) == 1
-  )
+forall(worker in N,day in W)( 
+    %(sum(x in 0..3)(T_new[worker,day,x])) == 1
+    count_eq(T_new[worker,day,..],1,1)
 );
 
 %To convert to desired output format
 constraint
 forall(i in 1..groups, j in 1..w, k in 0..numShifts)(
-  if(T_new[i,j,k] == 1) then T[(i-1)*w + j] = k else true endif
+  if(T_new[i,j,k] == 1) then (T[(i-1)*w + j] = k) else true endif
 );
 
 %demand constraints
 constraint
 forall(s in S,d in W)(
-  (sum(x in N)(T_new[x,d,s])) == demand[s,max(1,(d+o) mod (w+1))]
+  (sum(x in N)(T_new[x,d,s])) == demand[s,((d+o-1) mod w)+1]
 );  
 
-constraint
+constraint implied_constraint(
 forall(d in W)(
-  (sum(x in N)(T_new[x,d,0])) == groups - (sum(s in S)(demand[s,max(1,(d+o) mod (w+1))]))
-);
+  (sum(x in N)(T_new[x,d,0])) == groups - (sum(s in S)(demand[s,((d+o-1) mod w)+1]))
+));
 
 %symmetry breaking constraints
 constraint symmetry_breaking_constraint(T_new[1,1,0] != 1);
@@ -211,44 +210,26 @@ forall(n in 1..groups, d in 1..w, s in S)(
 
 %offset breaking
 
-constraint
-forall(d in 2..w)(
-  if(sum(s in S)(demand[s,d]) > sum(s in S)(demand[s,d-1])) then(
-    gt[d] = d
-  )
-  else (
-    gt[d] = w+4
-  )
-  endif
-);
+% Constraints the offset
+int: o_helper = 
+  min([w+1] ++ 
+  [d-1 | d in 2..w where sum(demand[..,d]) > sum(demand[..,d-1])]
+  );
+% Calculates the offset 
+int: o = if o_helper <= w then o_helper else 0 endif;
 
 constraint
-  if(sum(s in S)(demand[s,1]) > sum(s in S)(demand[s,w])) then(
-    gt[1] = 1
-  )
-  else(
-    gt[1] = w+4
-  )
-  endif;
-
-
-constraint symmetry_breaking_constraint(if(min(gt) == w + 4) then o == 0 else o = min(gt)-1 endif);
-
-constraint
-free = sum(x in 1..groups)((T_new[x,w-1,0] = 1) /\ (T_new[x,w,0]=1))
+free = sum(x in 1..groups)((T_new[x,w-1-o,0] = 1) /\ (T_new[x,w-o,0]=1))
 ;
 
-  
-  
-    
+array[1..4] of string: shifts_str= ["-", "1", "2", "3"];
+output ["["] ++ [shifts_str[fix(T[i])+1] ++ 
+  if i == pr then "]\n" 
+  else "," 
+  endif | i in 1..pr];
+output ["Offset: \(o)\n"];
+output ["Free weekends: \(free)\n"];
 
-%output ["T-new","\(T_new)\n"];
-output ["T","\(T)\n"];
-output ["free weekends \(free)\n"];
-%output ["gt","\(gt)\n"];
-
-%output ["demand","\(demand)\n"];
-%output ["offset","\(o)\n"];
  
 
 
