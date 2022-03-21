@@ -101,14 +101,14 @@ constraint forall(i in NW,s in S)(
 constraint forall(i in NW)(
   (T[i] == 0 /\ T[calc_mod(i-1,pr)] != 0) -> 
     (i + maxOff > pr) \/  
-    exists(j in minOff..maxOff)(T[calc_mod(i+j, pr)] != 0) :: domain
+    exists(j in minOff..maxOff)(T[calc_mod(i+j, pr)] != 0)
 );
 % For shifts
 constraint forall(i in NW,s in S)(
   (T[i] == s /\ T[calc_mod(i-1,pr)] != s) ->
     (i + maxShift[s] > pr) \/ 
     (exists(j in minShift[s]..maxShift[s])
-      (T[calc_mod(i+j,pr)] != s)) :: domain
+      (T[calc_mod(i+j,pr)] != s))
 );
   
      
@@ -121,7 +121,7 @@ constraint forall(i in NW)(
 constraint forall(i in NW)(
   (T[i] != 0 /\ T[calc_mod(i-1,pr)] == 0) ->
     (i + maxOn > pr) \/ 
-    exists(j in minOn..maxOn)(T[calc_mod(i+j, pr)] == 0) :: domain
+    exists(j in minOn..maxOn)(T[calc_mod(i+j, pr)] == 0)
 );  
 
 % Applies the forbidden shifts constraints
@@ -136,7 +136,7 @@ forall(i in NW)(
  (forbidden3l > 0) ->
      forall(j in 1..forbidden3l)(
          forbidden3[j,..] != 
-           [T[i],T[calc_mod(i+1,pr)],T[calc_mod(i+2,pr)]] :: domain
+           [T[i],T[calc_mod(i+1,pr)],T[calc_mod(i+2,pr)]]
      )
 );
        
