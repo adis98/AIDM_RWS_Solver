@@ -23,12 +23,17 @@ int: forbidden3l = length(forbidden3) div 3;
 
 
 %decision variables in new perspective
-array[1..w] of var 1..w+4: gt;
 array[1..groups,1..w,0..numShifts] of var 0..1: T_new;
 array[1..groups*w] of var Sp: T; 
 var 0..groups: free;
 
+%maximize the number of free weekends
 solve maximize free;
+
+%function to calculate modulus
+function int: calc_mod(int: inp, int: divisor) = 
+  inp - bool2int(inp>divisor)*divisor + bool2int(inp<1)*divisor;
+  
 %to have exactly one shift selected 
 constraint
 forall(worker in N,day in W)( 
@@ -39,7 +44,7 @@ forall(worker in N,day in W)(
 %To convert to desired output format
 constraint
 forall(i in 1..groups, j in 1..w, k in 0..numShifts)(
-  if(T_new[i,j,k] == 1) then (T[(i-1)*w + j] = k) else true endif
+  (T_new[i,j,k] == 1) ->(T[(i-1)*w + j] = k) 
 );
 
 %demand constraints
@@ -219,11 +224,17 @@ int: o_helper =
 int: o = if o_helper <= w then o_helper else 0 endif;
 
 constraint
-free = sum(x in 1..groups)((T_new[x,w-1-o,0] = 1) /\ (T_new[x,w-o,0]=1))
+  if(o == 6) then(
+      free = sum(x in 1..groups)((T_new[x,w,0] = 1) /\ (T_new[x,w-o,0]=1))
+  )
+  else(
+    free = sum(x in 1..groups)((T_new[x,w-o-1,0] = 1) /\ (T_new[x,w-o,0]=1))
+  )
+  endif
 ;
 
 array[1..4] of string: shifts_str= ["-", "1", "2", "3"];
-output ["["] ++ [shifts_str[fix(T[i])+1] ++ 
+output ["["] ++ [shifts_str[fix(T[calc_mod(i+pr - o,pr)])+1] ++ 
   if i == pr then "]\n" 
   else "," 
   endif | i in 1..pr];
