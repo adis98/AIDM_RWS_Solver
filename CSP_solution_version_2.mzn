@@ -225,7 +225,7 @@ int: o = if o_helper <= w then o_helper else 0 endif;
 
 constraint
   if(o == 6) then(
-      free = sum(x in 1..groups)((T_new[x,w,0] = 1) /\ (T_new[x,w-o,0]=1))
+    free = sum(x in 1..groups)((T_new[((x-1+groups) mod groups) + 1,w,0] = 1) /\ (T_new[x,w-o,0]=1))
   )
   else(
     free = sum(x in 1..groups)((T_new[x,w-o-1,0] = 1) /\ (T_new[x,w-o,0]=1))
