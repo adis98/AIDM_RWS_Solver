@@ -163,4 +163,3 @@ output ["["] ++ [shifts_str[fix(T[calc_mod(i-o,pr)])+1] ++
   if i == pr then "]\n" 
   else "," 
   endif | i in NW];
-output ["\(o)\n"];

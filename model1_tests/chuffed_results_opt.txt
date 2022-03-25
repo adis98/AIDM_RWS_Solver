@@ -1,0 +1,287 @@
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example1.dzn" -f --output-time --time-limit 3599000  )
+[1,1,1,1,-,-,-,-,1,1,1,1,1,1,1,-,-,-,-,2,2,2,2,2,3,3,-,-,2,2,2,2,2,3,3,-,-,2,2,2,3,3,3,3,-,-,1,1,1,3,3,3,-,-,2,2,2,2,3,3,3,-,-]
+3
+2
+% time elapsed: 0.66 s
+----------
+==========
+% time elapsed: 0.66 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example10.dzn" -f --output-time --time-limit 3599000  )
+[2,2,2,2,3,3,3,-,-,1,1,1,1,1,-,-,1,1,1,1,1,1,1,-,-,2,2,2,3,3,3,-,-,1,1,3,3,-,-,-,2,2,2,2,2,-,-,-,-,2,2,2,2,2,-,-,-,1,1,3,3,3,3,3,-,-,1,1,3,3,-,-,1,1,1,2,2,2,-,-,1,1,2,2,2,-,-,2,2,3,3,3,3,-,-,-,1,1,1,3,3,-,-,-,-,3,3,3,3,3,-,-,2,2,2,2,2,-,-,2,2,2,3,3,-,-,1,1,1,2,2,-,-,1,1,1,1,1,-,-,1,1,3,3,3,-,-,1,1,3,3,3,-,-,3,3,3,3,-,-,-,-,2,2,2,2,-,-,1,1,1,1,1,-,-,-,2,2,2,2,-,-,3,3,3,3,3,-,-]
+0
+15
+% time elapsed: 1456.63 s
+----------
+==========
+% time elapsed: 1456.63 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example11.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=42840876
+%%%mzn-stat: failures=34202123
+%%%mzn-stat: restarts=45058
+%%%mzn-stat: variables=8795
+%%%mzn-stat: intVars=457
+%%%mzn-stat: boolVariables=8336
+%%%mzn-stat: propagators=59
+%%%mzn-stat: propagations=807573497
+%%%mzn-stat: peakDepth=190
+%%%mzn-stat: nogoods=34202123
+%%%mzn-stat: backjumps=7308995
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3598.308
+%%%mzn-stat: initTime=0.092
+%%%mzn-stat: solveTime=3598.216
+%%%mzn-stat: objective=6
+%%%mzn-stat: optTime=17.316
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.04
+%%%mzn-stat: randomSeed=1647612268
+=====ERROR=====
+% time elapsed: 3599.16 s
+Terminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example12.dzn" -f --output-time --time-limit 3599000  )
+[1,1,1,2,2,2,2,-,-,-,1,1,1,1,1,2,2,-,-,1,1,1,1,1,2,2,-,-,-,1,1,1,1,1,2,2,-,-,1,1,1,2,2,2,2,-,-,1,1,1,2,2,2,2,-,-,1,1,1,1,1,-,-,1,1,1,1,1,-,-,1,1,1,2,2,-,-,2,2,2,2,2,-,-,-,1,1,1,1,1,2,2,-,-,1,1,1,2,2,2,2,-,-,1,1,1,1,1,2,2,-,-,-,1,1,1,1,2,2,2,-,-,1,1,2,2,2,2,2,-,-,1,1,1,2,2,2,2,-,-]
+0
+8
+% time elapsed: 6.12 s
+----------
+==========
+% time elapsed: 6.12 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example13.dzn" -f --output-time --time-limit 3599000  )
+[1,1,1,1,-,-,-,-,1,1,2,2,2,2,2,-,-,1,1,2,2,2,2,3,-,-,-,1,1,1,3,-,-,-,1,1,2,2,-,-,-,1,1,2,2,-,-,-,1,1,1,1,1,-,-,-,1,1,1,2,2,2,2,-,-,1,1,1,1,1,2,2,-,-,2,2,2,2,2,-,-,1,1,1,1,-,-,-,1,1,1,1,-,-,2,2,2,-,-,1,1,1,1,1,1,-,-,1,1,1,1,1,-,-,1,1,1,2,2,-,-,1,1,1,2,2,2,2,-,-,1,1,1,-,-,2,2,2,-,-,1,1,1,1,1,-,-,1,1,1,1,1,-,-,2,2,2,2,3,-,-,1,1,1,2,2,-,-]
+1
+6
+% time elapsed: 3.28 s
+----------
+==========
+% time elapsed: 3.28 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example14.dzn" -f --output-time --time-limit 3599000  )
+[1,1,1,1,2,2,-,2,2,3,3,3,-,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,1,1,1,1,-,1,1,2,2,2,2,2,-,-,1,1,1,3,3,-,-,-,1,1,1,1,2,2,2,-,-,1,1,2,2,3,3,-,-,1,1,1,1,1,2,2,-,2,2,3,3,3,-,-,1,1,1,2,2,2,2,-,-]
+0
+4
+% time elapsed: 0.71 s
+----------
+==========
+% time elapsed: 0.71 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example15.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=35355740
+%%%mzn-stat: failures=25884183
+%%%mzn-stat: restarts=32771
+%%%mzn-stat: variables=20209
+%%%mzn-stat: intVars=965
+%%%mzn-stat: boolVariables=19242
+%%%mzn-stat: propagators=59
+%%%mzn-stat: propagations=540824038
+%%%mzn-stat: peakDepth=403
+%%%mzn-stat: nogoods=25884183
+%%%mzn-stat: backjumps=6802138
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3597.835
+%%%mzn-stat: initTime=0.196
+%%%mzn-stat: solveTime=3597.639
+%%%mzn-stat: objective=13
+%%%mzn-stat: optTime=245.499
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.05
+%%%mzn-stat: randomSeed=1647617362
+=====ERROR=====
+% time elapsed: 3599.50 s
+Terminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example16.dzn" -f --output-time --time-limit 3599000  )
+[1,1,1,1,1,2,2,-,-,1,1,3,3,3,-,-,1,1,1,1,-,-,2,2,2,2,2,-,-,-,-,1,1,1,1,1,1,-,-,-,1,1,1,1,1,-,-,1,1,3,3,3,-,-,1,1,1,1,1,-,-,2,2,2,2,2,-,-,-,1,1,1,2,2,2,2,-,-,1,1,1,1,1,1,-,-,1,1,2,2,2,2,2,-,-,-,-,1,1,1,1,1,1,-,-,1,1,2,2,2,-,-,1,1,1,1,1,-,-,1,1,2,2,2,-,-,1,1,1,1,1,1,-,-,1,1,1,1,1,1,-,-,-,1,1,1,1,-,-,1,1,1,1,1,2,2,-,-,1,1,2,2,-,-,1,1,1,2,2,-,-,1,1,1,1,1,1,-,-,-,1,1,1,1,-,-,-,1,1,1,2,2,-,-,-,-,1,1,1,1,1,-,-]
+2
+9
+% time elapsed: 871.12 s
+----------
+==========
+% time elapsed: 871.12 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example17.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=104991627
+%%%mzn-stat: failures=98476600
+%%%mzn-stat: restarts=121634
+%%%mzn-stat: variables=7607
+%%%mzn-stat: intVars=497
+%%%mzn-stat: boolVariables=7108
+%%%mzn-stat: propagators=45
+%%%mzn-stat: propagations=1039828496
+%%%mzn-stat: peakDepth=227
+%%%mzn-stat: nogoods=98476600
+%%%mzn-stat: backjumps=3489822
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3598.157
+%%%mzn-stat: initTime=0.108
+%%%mzn-stat: solveTime=3598.049
+%%%mzn-stat: objective=11
+%%%mzn-stat: optTime=0.110
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.02
+%%%mzn-stat: randomSeed=1647622320
+=====ERROR=====
+% time elapsed: 3599.31 s
+Terminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example18.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=34628285
+%%%mzn-stat: failures=29160909
+%%%mzn-stat: restarts=37470
+%%%mzn-stat: variables=15554
+%%%mzn-stat: intVars=793
+%%%mzn-stat: boolVariables=14759
+%%%mzn-stat: propagators=59
+%%%mzn-stat: propagations=639146792
+%%%mzn-stat: peakDepth=275
+%%%mzn-stat: nogoods=29160909
+%%%mzn-stat: backjumps=3108782
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3598.008
+%%%mzn-stat: initTime=0.194
+%%%mzn-stat: solveTime=3597.814
+%%%mzn-stat: objective=23
+%%%mzn-stat: optTime=1.406
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.05
+%%%mzn-stat: randomSeed=1647626087
+=====ERROR=====
+% time elapsed: 3599.26 s
+Terminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example19.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=30323
+%%%mzn-stat: failures=5675
+%%%mzn-stat: restarts=24
+%%%mzn-stat: variables=35404
+%%%mzn-stat: intVars=1800
+%%%mzn-stat: boolVariables=33602
+%%%mzn-stat: propagators=59
+%%%mzn-stat: propagations=164541
+%%%mzn-stat: peakDepth=601
+%%%mzn-stat: nogoods=5675
+%%%mzn-stat: backjumps=19681
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=0.891
+%%%mzn-stat: initTime=0.353
+%%%mzn-stat: solveTime=0.538
+%%%mzn-stat: objective=-1
+%%%mzn-stat: optTime=0.000
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.08
+%%%mzn-stat: randomSeed=1647629703
+^CTerminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example2.dzn" -f --output-time --time-limit 3599000  )
+[3,3,3,3,3,3,3,-,-,-,3,3,3,3,3,3,3,-,-,-,-,1,1,1,1,1,-,-,-,-,1,1,1,1,1,-,-,2,2,2,2,2,2,2,-,-,-,1,1,1,1,-,-,-,2,2,2,2,2,2,2,-,-]
+0
+3
+% time elapsed: 0.60 s
+----------
+==========
+% time elapsed: 0.60 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example20.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=121133
+%%%mzn-stat: failures=9274
+%%%mzn-stat: restarts=32
+%%%mzn-stat: variables=51631
+%%%mzn-stat: intVars=2459
+%%%mzn-stat: boolVariables=49170
+%%%mzn-stat: propagators=59
+%%%mzn-stat: propagations=483711
+%%%mzn-stat: peakDepth=1136
+%%%mzn-stat: nogoods=9274
+%%%mzn-stat: backjumps=99503
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=2.482
+%%%mzn-stat: initTime=0.533
+%%%mzn-stat: solveTime=1.949
+%%%mzn-stat: objective=19
+%%%mzn-stat: optTime=1.562
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.19
+%%%mzn-stat: randomSeed=1647629710
+^CTerminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example3.dzn" -f --output-time --time-limit 3599000  )
+[2,2,3,3,-,-,-,1,1,2,2,-,-,-,-,2,2,2,3,3,-,-,2,2,2,2,2,2,-,-,-,1,1,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,-,-,1,1,1,2,2,2,2,-,-,1,1,2,2,2,-,-,1,1,1,2,2,-,-,1,1,1,1,-,-,-,2,2,3,3,3,3,3,-,-,1,1,1,2,2,2,-,-,1,1,1,1,-,-,1,1,1,1,1,3,3,-,-,3,3,3,3,3,-,-]
+4
+5
+% time elapsed: 0.75 s
+----------
+==========
+% time elapsed: 0.75 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example4.dzn" -f --output-time --time-limit 3599000  )
+[3,3,3,-,-,-,-,1,1,1,-,-,-,-,1,1,1,3,3,-,-,1,1,1,1,1,1,-,-,-,-,1,1,1,-,-,-,-,1,1,1,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-]
+0
+3
+% time elapsed: 0.68 s
+----------
+==========
+% time elapsed: 0.68 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example5.dzn" -f --output-time --time-limit 3599000  )
+[2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,1,1,1,1,3,3,-,-,2,2,2,3,3,3,-,-,2,2,3,3,3,3,-,-,-,-,2,2,2,3,3,-,-,2,2,3,3,3,-,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,1,1,2,2,2,2,-]
+0
+5
+% time elapsed: 0.63 s
+----------
+==========
+% time elapsed: 0.64 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example6.dzn" -f --output-time --time-limit 3599000  )
+[2,2,3,3,3,-,-,-,-,1,1,1,1,3,3,3,-,-,-,-,3,3,3,3,3,3,-,-,1,1,1,1,1,1,-,1,1,2,2,2,2,-,2,2,2,2,2,2,-]
+0
+2
+% time elapsed: 0.60 s
+----------
+==========
+% time elapsed: 0.60 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example7.dzn" -f --output-time --time-limit 3599000  )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=23455750
+%%%mzn-stat: failures=19161705
+%%%mzn-stat: restarts=26624
+%%%mzn-stat: variables=8450
+%%%mzn-stat: intVars=433
+%%%mzn-stat: boolVariables=8015
+%%%mzn-stat: propagators=59
+%%%mzn-stat: propagations=530440852
+%%%mzn-stat: peakDepth=150
+%%%mzn-stat: nogoods=19161705
+%%%mzn-stat: backjumps=3362317
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3598.472
+%%%mzn-stat: initTime=0.094
+%%%mzn-stat: solveTime=3598.378
+%%%mzn-stat: objective=11
+%%%mzn-stat: optTime=0.003
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.02
+%%%mzn-stat: randomSeed=1647629718
+=====ERROR=====
+% time elapsed: 3599.58 s
+Terminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example8.dzn" -f --output-time --time-limit 3599000  )
+[1,1,1,1,1,-,-,1,1,2,2,-,-,-,2,2,2,-,-,-,-,1,1,1,2,2,-,-,1,1,1,1,1,-,-,-,-,1,1,1,1,3,3,-,-,1,1,1,-,-,-,-,2,2,2,3,3,3,-,-,2,2,3,3,3,3,3,-,-,-,2,2,2,2,2,-,-,-,3,3,3,3,-,-,2,2,2,-,-,-,-,2,2,2,2,2,-,-,2,2,3,3,3,-,-,1,1,1,1,1,-,-]
+0
+12
+% time elapsed: 0.95 s
+----------
+==========
+% time elapsed: 0.95 s
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed CSP_solution.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data - Copy\Example9.dzn" -f --output-time --time-limit 3599000  )

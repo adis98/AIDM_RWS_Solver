@@ -1,0 +1,161 @@
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example1.dzn" --output-time --time-limit 3600000 )
+result = [2, 2, 2, 3, 3, 3, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 2, 2, 3, 3, 3, 3, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 3, 3, 3, 3, 0, 0, 1, 1, 2, 2, 0, 0, 2, 2, 2, 2, 3, 3, 3, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0]
+o = 3
+% time elapsed: 0.84 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example10.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 0, 0, 3, 3, 3, 3, 0, 0, 1, 1, 3, 3, 0, 0, 0, 0, 1, 1, 3, 3, 0, 0, 1, 1, 2, 2, 0, 0, 1, 1, 2, 2, 0, 0, 1, 1, 1, 2, 2, 0, 0, 1, 1, 3, 3, 0, 0, 0, 1, 1, 2, 2, 0, 0, 3, 3, 3, 3, 0, 0, 2, 2, 3, 3, 3, 0, 0, 1, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 3, 3, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 1, 1, 1, 3, 3, 3, 3, 0, 0, 3, 3, 3, 3, 3, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 2, 3, 3, 3, 0, 0, 3, 3, 3, 3, 3, 0, 0, 1, 1, 3, 3, 3, 0, 0, 2, 2, 2, 2, 2, 0, 0]
+o = 0
+% time elapsed: 1.50 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example11.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 0, 0, 2, 2, 2, 2, 2, 3, 3, 0, 0, 1, 1, 2, 2, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 3, 3, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 3, 3, 3, 0, 0, 0, 0]
+o = 1
+% time elapsed: 243.55 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example12.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0]
+o = 0
+% time elapsed: 1.16 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example13.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 1, 2, 2, 3, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 2, 2, 2, 0, 0, 0, 2, 2, 3, 0, 0, 2, 2, 3, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 2, 2, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 2, 2, 0, 0, 0, 0]
+o = 1
+% time elapsed: 1.44 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example14.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 2, 2, 2, 3, 3, 3, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 2, 2, 3, 3, 3, 0, 0, 1, 1, 3, 3, 0, 0, 0, 1, 1, 1, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 1, 1, 0]
+o = 0
+% time elapsed: 0.98 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example15.dzn" --output-time --time-limit 3600000 )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=12723767
+%%%mzn-stat: failures=10407906
+%%%mzn-stat: restarts=0
+%%%mzn-stat: variables=48351
+%%%mzn-stat: intVars=5487
+%%%mzn-stat: boolVariables=42862
+%%%mzn-stat: propagators=7676
+%%%mzn-stat: propagations=4867061931
+%%%mzn-stat: peakDepth=443
+%%%mzn-stat: nogoods=10407906
+%%%mzn-stat: backjumps=2315767
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3597.702
+%%%mzn-stat: initTime=0.404
+%%%mzn-stat: solveTime=3597.298
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.28
+%%%mzn-stat: randomSeed=1647383298
+=====ERROR=====
+% time elapsed: 3600.41 s
+Terminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example16.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 3, 3, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 3, 3, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 0, 0, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 0, 0]
+o = 2
+% time elapsed: 4.11 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example17.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 2, 2, 2, 0, 0, 1, 1, 1, 1, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 2, 2, 0, 0, 1, 1, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 0, 1, 1, 2, 2, 2, 2, 2, 0, 0, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 1, 0, 0, 1, 1, 2, 2, 2, 2, 0, 0, 1, 1, 2, 2, 2, 2, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0]
+o = 3
+% time elapsed: 1.48 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example18.dzn" --output-time --time-limit 3600000 )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=10562376
+%%%mzn-stat: failures=9888718
+%%%mzn-stat: restarts=0
+%%%mzn-stat: variables=38344
+%%%mzn-stat: intVars=4476
+%%%mzn-stat: boolVariables=33866
+%%%mzn-stat: propagators=6361
+%%%mzn-stat: propagations=8664848200
+%%%mzn-stat: peakDepth=135
+%%%mzn-stat: nogoods=9888718
+%%%mzn-stat: backjumps=673593
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=3068.187
+%%%mzn-stat: initTime=0.286
+%%%mzn-stat: solveTime=3067.901
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.19
+%%%mzn-stat: randomSeed=1647415671
+^CTerminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example19.dzn" --output-time --time-limit 3600000 )
+^CTerminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example2.dzn" --output-time --time-limit 3600000 )
+result = [3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0]
+o = 0
+% time elapsed: 0.98 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example20.dzn" --output-time --time-limit 3600000 )
+^CTerminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example3.dzn" --output-time --time-limit 3600000 )
+result = [2, 2, 3, 3, 3, 3, 3, 0, 0, 0, 0, 1, 1, 2, 2, 0, 0, 2, 2, 2, 2, 3, 3, 0, 0, 0, 1, 1, 3, 3, 3, 3, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 0, 0, 1, 1, 1, 2, 2, 3, 3, 0, 0, 1, 1, 3, 3, 3, 0, 0, 1, 1, 1, 2, 2, 2, 0, 0, 0, 0, 1, 1, 3, 3, 3, 3, 3, 0, 0, 0, 1, 1, 1, 1, 0, 0, 3, 3, 3, 3, 0, 0, 1, 1, 2, 2, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0]
+o = 4
+% time elapsed: 1.19 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example4.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 3, 3, 3, 0, 0, 0, 0, 2, 2, 2, 3, 3, 0, 0]
+o = 0
+% time elapsed: 1.05 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example5.dzn" --output-time --time-limit 3600000 )
+result = [2, 2, 3, 3, 3, 0, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 0, 0, 1, 1, 3, 3, 0, 0, 1, 1, 1, 3, 3, 3, 3, 0, 0, 0, 0, 2, 2, 2, 3, 3, 0, 0, 1, 1, 1, 1, 2, 2, 0, 2, 2, 2, 2, 0, 0, 0, 1, 1, 2, 2, 2, 2, 0, 0, 3, 3, 3, 3, 0, 0, 1, 1, 1, 2, 2, 2, 0]
+
+o = 0
+% time elapsed: 0.90 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example6.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 3, 3, 3, 0, 0, 1, 1, 1, 1, 1, 1, 0, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 1, 1, 1, 1, 3, 3, 3, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 0, 0]
+o = 0
+% time elapsed: 0.72 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example7.dzn" --output-time --time-limit 3600000 )
+*** INTERRUPTED ***
+%%%mzn-stat: nodes=6234472
+%%%mzn-stat: failures=5376374
+%%%mzn-stat: restarts=0
+%%%mzn-stat: variables=21208
+%%%mzn-stat: intVars=2460
+%%%mzn-stat: boolVariables=18746
+%%%mzn-stat: propagators=3505
+%%%mzn-stat: propagations=1583806176
+%%%mzn-stat: peakDepth=70
+%%%mzn-stat: nogoods=5376374
+%%%mzn-stat: backjumps=858063
+%%%mzn-stat: peakMem=0.00
+%%%mzn-stat: time=1208.613
+%%%mzn-stat: initTime=0.171
+%%%mzn-stat: solveTime=1208.442
+%%%mzn-stat: baseMem=0.00
+%%%mzn-stat: trailMem=0.12
+%%%mzn-stat: randomSeed=1647418771
+^CTerminate batch job (Y/N)? N
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example8.dzn" --output-time --time-limit 3600000 )
+result = [1, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 3, 3, 0, 0, 2, 2, 2, 0, 0, 0, 0, 1, 1, 1, 0, 0, 3, 3, 3, 3, 0, 0, 1, 1, 1, 1, 1, 0, 0, 2, 2, 2, 2, 2, 0, 0, 2, 2, 2, 0, 0, 0, 3, 3, 3, 3, 3, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 3, 3, 0, 0, 1, 1, 1, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 2, 2, 2, 2, 2, 0, 0]
+o = 0
+% time elapsed: 1.14 s
+----------
+
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver>(minizinc --solver Chuffed RWS_init.mzn "D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example9.dzn" --output-time --time-limit 3600000 )
+=====ERROR=====

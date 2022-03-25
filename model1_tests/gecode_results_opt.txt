@@ -1,0 +1,196 @@
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example1.dzn
+====================================================
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,2,2,2,3,3,3,3,-,-,2,2,2,2,2,2,-,-,2,2,3,3,3,3,-,-,1,1,1,1,2,2,-,-,1,1,3,3,3,-,-,2,2,2,2,3,3,3,-,-]
+3
+1
+% time elapsed: 0.81 s
+----------
+[1,1,1,1,-,-,-,-,1,1,1,1,1,1,1,-,-,-,-,2,2,2,2,2,3,3,-,-,2,2,2,2,2,3,3,-,-,2,2,2,3,3,3,3,-,-,1,1,1,3,3,3,-,-,2,2,2,2,3,3,3,-,-]
+3
+% time elapsed: 0.82 s
+----------
+==========
+% time elapsed: 1.14 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 2
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example2.dzn
+====================================================
+[1,1,1,1,-,-,-,-,2,2,2,2,-,-,-,-,1,1,1,1,1,-,-,2,2,2,2,2,2,-,-,3,3,3,3,3,3,3,-,-,2,2,2,2,-,-,1,1,1,1,1,-,-,-,3,3,3,3,3,3,3,-,-]
+0
+3
+----------
+==========
+% time elapsed: 3.10 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 3
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example3.dzn
+====================================================
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,1,-,-,-,-,1,1,1,1,2,2,-,-,1,1,1,2,2,-,-,2,2,2,3,3,3,3,-,-,2,2,2,2,2,3,3,-,-,1,1,1,1,2,2,-,-,2,2,2,2,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,2,2,3,3,-,-,2,2,3,3,3,3,-,-,-,2,2,3,3,3,3,3,-,-]
+4
+4
+----------
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,1,1,1,1,-,-,-,2,2,2,2,-,-,-,2,2,2,2,2,3,3,-,-,1,1,1,1,1,-,-,1,1,1,1,1,-,-,3,3,3,3,3,-,-,2,2,2,2,2,2,-,-,-,1,1,3,3,3,-,-,1,1,1,1,2,2,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,2,2,3,3,-,-,2,2,2,3,3,3,-,-,-]
+4
+5
+% time elapsed: 558.27 s
+----------
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 4
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example4.dzn
+[3,3,3,-,-,-,-,1,1,1,-,-,-,-,1,1,1,3,3,-,-,1,1,1,1,1,1,-,-,-,-,1,1,1,-,-,-,-,1,1,1,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-,2,2,2,2,2,2,-]
+0
+3
+% time elapsed: 0.73 s
+----------
+==========
+% time elapsed: 5.32 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 5
+====================================================
+Executing
+====================================================
+[2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,1,1,1,1,3,3,-,-,2,2,2,3,3,3,-,-,2,2,3,3,3,3,-,-,-,-,2,2,2,3,3,-,-,2,2,3,3,3,-,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,1,1,2,2,2,2,-]
+0
+5
+% time elapsed: 0.62 s
+----------
+==========
+% time elapsed: 9.53 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 6
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example6.dzn
+====================================================
+[2,2,3,3,3,-,-,-,-,1,1,1,1,3,3,3,-,-,-,-,3,3,3,3,3,3,-,-,1,1,1,1,1,1,-,1,1,2,2,2,2,-,2,2,2,2,2,2,-]
+0
+% time elapsed: 0.52 s
+----------
+==========
+% time elapsed: 0.56 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 7
+====================================================
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example7.dzn
+====================================================
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,2,2,2,2,-,-,-,-,1,1,1,1,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,2,2,2,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,1,1,1,3,3,3,3,-,-]
+0
+11
+% time elapsed: 0.80 s
+----------
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 8
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example8.dzn
+====================================================
+[1,1,1,-,-,-,-,1,1,1,-,-,-,-,2,2,2,-,-,-,3,3,3,3,3,-,-,-,-,3,3,3,3,-,-,1,1,1,1,1,-,-,1,1,1,1,1,-,-,1,1,1,1,1,-,-,2,2,2,2,2,-,-,2,2,2,2,2,-,-,2,2,2,2,2,-,-,2,2,2,2,2,2,-,-,-,-,1,1,1,3,3,-,-,1,1,1,3,3,-,-,2,2,2,-,-,3,3,3,3,-,-]
+0
+11
+----------
+[1,1,1,-,-,-,-,1,1,1,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,-,-,-,1,1,1,1,1,-,-,-,-,2,2,2,2,3,3,-,-,1,1,1,3,3,3,-,-,2,2,3,3,-,-,1,1,1,-,-,3,3,3,3,-,-,1,1,1,1,1,-,-,1,1,1,1,1,-,-,2,2,2,2,2,-,-,2,2,2,2,2,-,-,2,2,2,2,2,-,-,2,2,3,3,3,-,-]
+0
+12
+% time elapsed: 283.36 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 9
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example9.dzn
+====================================================
+=====UNKNOWN=====
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 10
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example10.dzn
+====================================================
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,2,2,2,2,2,3,3,-,-,1,1,1,1,1,-,-,1,1,1,1,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-]
+0
+13
+% time elapsed: 472.17 s
+----------
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,2,2,2,2,2,-,-,2,2,2,2,2,3,3,-,-,-,1,1,1,1,3,3,3,-,-,1,1,3,3,3,3,3,-,-,2,2,2,2,3,3,3,-,-,1,1,1,1,1,-,-,1,1,1,2,2,-,-,1,1,1,2,2,-,-,2,2,2,2,2,-,-,2,2,2,2,2,-,-,2,2,2,2,2,-,-,3,3,3,3,3,-,-,3,3,3,3,3,-,-,3,3,3,3,3,-,-,2,2,2,2,2,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-,1,1,3,3,3,3,-,-]
+0
+14
+% time elapsed: 3194.65 s
+----------
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 11
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example11.dzn
+====================================================
+=====UNKNOWN=====
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 12
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example12.dzn
+====================================================
+=====UNKNOWN=====
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 13
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example13.dzn
+====================================================
+=====UNKNOWN=====
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 14
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example14.dzn
+====================================================
+[2,2,2,2,-,-,-,-,1,1,3,3,-,-,1,1,1,1,-,1,1,1,1,-,1,1,2,2,2,-,2,2,2,2,2,3,3,-,-,2,2,2,3,3,3,-,-,1,1,2,2,3,3,3,-,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,1,1,1,10
+3
+% time elapsed: 7.52 s
+----------
+[2,2,2,2,-,-,-,-,1,1,1,2,2,2,2,-,2,2,2,2,2,3,3,-,-,1,1,1,3,3,-,-,1,1,1,1,2,2,2,-,2,2,2,2,3,3,3,-,-,1,1,1,1,-,1,1,1,1,3,3,3,-,-,1,1,1,1,1,-,-,1,1,1,1,1,1,-,1,1,1,1,1,1,-,1,1,1,1,2,2,-]
+0
+4
+% time elapsed: 129.09 s
+----------
+==========
+% time elapsed: 1091.35 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 15
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example15.dzn
+====================================================
+=====UNKNOWN=====
+% time elapsed: 3601.47 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 16
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example16.dzn
+====================================================
+% time elapsed: 3601.11 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 17
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example17.dzn
+====================================================
+% time elapsed: 3601.60 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 18
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example18.dzn
+====================================================
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,1,1,1,1,-,-,-,-,1,1,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,2,2,3,3,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,2,2,2,3,3,3,3,-,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-]
+0
+17
+% time elapsed: 26.73 s
+----------
+[1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,1,1,1,1,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,1,1,1,1,-,-,-,-,1,1,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,2,2,2,2,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,-,-,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-,-,2,2,3,3,3,3,3,-,-,2,2,3,3,3,3,3,-,-,2,2,2,3,3,3,3,-,-]
+0
+18
+% time elapsed: 147.29 s
+----------
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 19
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example19.dzn
+====================================================
+=====UNKNOWN=====
+% time elapsed: 3557.07 s
+PS D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver> .\run_mzn.ps1 Gecode 20
+====================================================
+Executing
+D:\EARLY_YEARS\Master\TU Delft\Q3\Algorithms for Intelligent Decision Making\Assignment\AIDM_RWS_Solver\data\Example20.dzn
+====================================================
+=====UNKNOWN=====
+% time elapsed: 3604.21 s
