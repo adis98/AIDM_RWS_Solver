@@ -27,7 +27,7 @@ array[1..groups,1..w,0..numShifts] of var 0..1: T_new;
 array[1..groups*w] of var Sp: T; 
 var 0..groups: free;
 
-%maximize the number of free weekends
+
 solve satisfy;
 
 %function to calculate modulus
@@ -37,7 +37,7 @@ function int: calc_mod(int: inp, int: divisor) =
 %to have exactly one shift selected 
 constraint
 forall(worker in N,day in W)( 
-    %(sum(x in 0..3)(T_new[worker,day,x])) == 1
+    
     count_eq(T_new[worker,day,..],1,1)
 );
 
@@ -229,6 +229,7 @@ output ["["] ++ [shifts_str[fix(T[calc_mod(i+pr - o,pr)])+1] ++
   else "," 
   endif | i in 1..pr];
 output ["Offset: \(o)\n"];
+
 
 
  
