@@ -239,7 +239,7 @@ output ["["] ++ [shifts_str[fix(T[calc_mod(i+pr - o,pr)])+1] ++
   else "," 
   endif | i in 1..pr];
 
-output ["Free weekends: \(free)\n"];
+output ["\(free)\n"];
 
 
  
