@@ -1,0 +1,8 @@
+output ((["["]++[shifts_str[fix(T[i])+1]++if i==pr then "]\n" else "," endif | i in NW, ])++[""++format(o)++"\n"])++[""++format(f)++"\n"];
+function string : format(opt $T: x) = show(x);
+int: pr = 140;
+set of int: NW = 1..140;
+array [NW] of int: T;
+int: f;
+int: o = 0;
+array [1..4] of string: shifts_str = ["-","1","2","3"];

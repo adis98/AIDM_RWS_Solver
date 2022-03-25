@@ -159,7 +159,7 @@ constraint
 
 % OUTPUT
 array[1..4] of string: shifts_str= ["-", "1", "2", "3"];
-output ["["] ++ [shifts_str[fix(T[i])+1] ++ 
+output ["["] ++ [shifts_str[fix(T[calc_mod(i-o,pr)])+1] ++ 
   if i == pr then "]\n" 
   else "," 
   endif | i in NW];
